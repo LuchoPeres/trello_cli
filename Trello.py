@@ -31,8 +31,4 @@ class Trello():
     def new_card(self,id_list,name, desc=None):
         resp = requests.post(f"https://trello.com/1/lists/{id_list}/cards", params={"key": self._apikey, "token": self._token}, data={"name": name, "idList": id_list, "desc": desc,"idBoard":self._id_board})
         return self.raise_or_json(resp)
-    #move card from list a to b
-    #def move_card(self, id_list1,id_list2):
-    #    return self.raise_or_json(resp)
-    
     
