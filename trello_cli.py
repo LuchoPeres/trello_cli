@@ -6,14 +6,7 @@ def greet():
     print('------------------------------')
     print('You are working on '+ board['name'])
     print('Tip: select a List to operate on Trello board.')
-    #print('Available lists: ')
-    #print_values(lists,'name')
-    
-def print_values(a_list, key):
-    count = 1
-    for elem in a_list:
-        print(count, '--',elem.get(key))
-        count+=1
+
 #this is an auxiliar function to generate the sql insert command for sqlite.
 #it receives the name of the table, and the list of values to insert.
 def sqlite_insert(table,values):
@@ -71,11 +64,6 @@ def delete_card(idList):
         except:
             raise
 
-#was not implemented
-#def move_card(idList):
-#    print('this should move a card')
-
-#ALL DICTIONARIES BELOW
 main_menu = {
     1: 'Problems',
     2: 'Working',
@@ -86,7 +74,6 @@ act_menu = {
     1: 'Display cards',
     2: 'Add new card',
     3: 'Delete cards',
-    #4: 'Move card', removed
     4: 'Go back'
 }
 
@@ -105,8 +92,6 @@ def actions_menu(idList,option1):
                  delete_card(idList)
              else: 
                  break
-        #elif option2==4: 
-        #     move_card(idList)
         elif option2==4:
             break
         else:
@@ -115,7 +100,6 @@ def actions_menu(idList,option1):
 trello=Trello('6136c9e1d3934b88f006963d3ab2aa2d','6ee8664fa7dd091a9353667eba31d360b22c9c983c6c62a1902334ec553b324e','vzsjBgwW')
 board=trello.get_board()
 lists=trello.get_lists()
-#cards=trello.get_cards('62839e07a1e2108ea02c876c')
 
 #connect to the database, if the database is not created, or if the name has changed it will be.
 con = sqlite3.connect('trello.db')
@@ -157,7 +141,4 @@ while (True):
         exit()
     else:
         print('Invalid option. Please enter a number between 1 and 4.')
-
-
-
 
