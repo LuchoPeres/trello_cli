@@ -6,10 +6,6 @@ I used sqlite as a backup database that should be a mirror of the Cards that are
 The task was to allow insertion only on 'Problems', 'Working' and 'Ready' Lists. Therefore those Lists are kind of hardcoded(on the menu, not by id). However with a few edits it could be used with whatever Lists you need.
 I wanted to implement a few other options and include some tests but I was kinda tight with time in my schedule this week.
 
-For recruiters and devs if you are reading this, keep in mind that I'm not a senior programmer with Python and I've used this language for around 2 years professionally.
-Mainly for scripting and automation testing with Selenium and other libraries like Sqlite, Request, Pandas, BeautifulSoup, etc.
-And yes it is also mentioned on the CV and during interviews.
-
 ## More in Depth
 trello_cli.py is the main program and Trello.py is the class I made to encapsulate all the requests. 
 This last one can be expanded if more functionality is needed. At first I prototyped a Boards-Lists-Cards Class model but then discarded it.
